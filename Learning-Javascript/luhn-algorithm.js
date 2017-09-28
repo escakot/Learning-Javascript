@@ -3,17 +3,11 @@ function check(digit) {
   let checkDigit = digitArray.pop();
   digitArray = digitArray.reverse().map(Number);
 
-  let doubleDigits = digitArray.map(function(d, index) {
+  let sumDigits = digitArray.map(function(d, index) {
     let digit = index % 2 == 0 ? d * 2 : d;
-    return digit
-  })
+    return digit > 9 ? digit - 9 : digit
+  }).reduce((a,b) => a + b, 0);
 
-  let minusDigits = doubleDigits.map(function(d) {
-    let digit = d > 9 ? d - 9 : d;
-    return digit
-  })
-
-  let sumDigits = minusDigits.reduce((a,b) => a + b, 0);
   let modDigit = sumDigits % 10;
 
   // console.log(digitArray);
