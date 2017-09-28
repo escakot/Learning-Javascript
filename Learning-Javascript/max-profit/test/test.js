@@ -12,9 +12,19 @@ describe("Max Profit", function() {
     var result = maxProfit(values);
     assert.equal(result, 5);
   });
+  it("should be 32 profit", function() {
+    var values = [13, 39, 12, 15, 44, 18, 35];
+    var result = maxProfit(values);
+    assert.equal(result, 32);
+  });
   it("should be no profit", function() {
     var values = [];
     var result = maxProfit(values);
     assert.equal(result, -1);
+  });
+  it("should be 0 profit", function() {
+    var values = [10];
+    var result = maxProfit(values);
+    assert.equal(result, 0);
   });
 });
